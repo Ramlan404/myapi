@@ -1,9 +1,7 @@
-__path = process.cwd()
 const ms = require('ms');
 const express = require('express');
 const router = express.Router();
 const fs = require('fs-extra');
-const fetch = require('node-fetch');
 
 const {
     Base,
@@ -1950,7 +1948,7 @@ router.get('/createapikey', async(req, res) => {
             message: 'What?'
         })
     }
-    if (keytoaccess !== '91329156') {
+    if (keytoaccess !== '06112002') {
         res.send({
             code: 403,
             message: 'What?'
@@ -1990,7 +1988,7 @@ router.get('/delapikey', async(req, res) => {
             message: 'What?'
         })
     }
-    if (keytoaccesss !== '91329156') {
+    if (keytoaccesss !== '06112002') {
         res.send({
             code: 403,
             message: 'What?'
@@ -2006,7 +2004,7 @@ router.get('/delapikey', async(req, res) => {
 
 router.get('/listapikey', async(req, res) => {
     const keytoacces = req.query.key
-    if (keytoacces !== '91329156') {
+    if (keytoacces !== '06112002') {
         res.send({
             code: 403,
             message: 'What?'
@@ -2216,27 +2214,6 @@ router.get('/brainly', async(req, res) => {
         })
     }
 })
-router.get('/maker/tahta', async(req, res) => {
-    var q = req.query.q
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!q) {
-        res.status(500).send({
-            status: 500,
-            message: 'masukin parameter'
-        })
-    } else {
-  let hasil = 'https://api.zeks.xyz/api/hartatahta?apikey=RamlanGans&text='+ q +''
-  data = await fetch(hasil).then(v => v.buffer())
-  await fs.writeFileSync(__path +'/tmp/tahta.jpg', data)
-  res.sendFile(__path +'/tmp/tahta.jpg')
-  }
- })
 
 router.get('/textpro/:id', async(req, res) => {
     var id = req.params.id
