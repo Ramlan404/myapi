@@ -101,16 +101,20 @@ const {
 } = require('./../lib');
 const {
   poShadow,
-  poRomantic,
   poSmoke,
-  poBurnPapper,
-  poNaruto,
-  poLoveMsg,
-  poMsgGrass,
-  poDoubleHeart,
-  poCoffeCup,
-  poLoveText,
-  poButterfly
+  poCoffe,
+  poCoffe2,
+  poGlowneon,
+  poWcube,
+  poNightsky,
+  poFur,
+  poFlaming,
+  poNeon,
+  poScary,
+  poWood,
+  poSilk,
+  poFlower,
+  poParty
 } = require("./../lib/utils/photooxy");
 
 const { default: axios } = require('axios');
@@ -2260,8 +2264,7 @@ router.get("/photooxy/shadow", async(req, res) => {
     } else {
         poShadow(text).then(data => {
       const result = {
-        status: true,
-        code: 200,
+        status: 200,
         creator: 'Ramlan ID',
         url: data.url
       }        
@@ -2269,7 +2272,379 @@ router.get("/photooxy/shadow", async(req, res) => {
         })
     }
 })
+router.get("/photooxy/smoketext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
 
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poSmoke(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/coffetext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poCoffe(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/coffetext2", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poCoffe2(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/glowingneon", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poGlowneon(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/whitecube", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poWcube(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/nightsky", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poNightsky(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/furtext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poFur(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/flamingtext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poFlaming(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/neonlight", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poNeon(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/scarytext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poScary(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/woodtext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poWood(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/silktext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poSilk(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/flowertext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poFlower(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get("/photooxy/partytext", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        poParty(text).then(data => {
+      const result = {
+        status: 200,
+        creator: 'Ramlan ID',
+        url: data.url
+      }        
+            res.send(result)
+        })
+    }
+})
+router.get('/photooxy/pubglogo', async(req, res) => {
+    var text1 = req.query.text1
+    var text2 = req.query.text2
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text1 || !text2) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  var acak = random()
+  let hasil = 'https://api.zeks.xyz/api/pubglogo?apikey=YTRAMLANID&text1='+ text1 +'&text2='+ text2 +''
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
 router.get('/textpro/:id', async(req, res) => {
     var id = req.params.id
     var text = req.query.text
@@ -2440,6 +2815,52 @@ router.get('/other/tahta', async(req, res) => {
     } else {
   var acak = random()
   let hasil = 'https://api.zeks.xyz/api/hartatahta?apikey=YTRAMLANID&text='+ q +''
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
+
+router.get('/other/ttp', async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  var acak = random()
+  let hasil = 'https://api.lolhuman.xyz/api/ttp2?apikey=YTRAMLANID&text='+ text +''
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.webp', data)
+  res.sendFile(__path +'/tmp/'+acak+'.webp')
+  }
+ })
+
+router.get('/other/nulis', async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  var acak = random()
+  let hasil = 'https://api.zeks.xyz/api/nulis?apikey=YTRAMLANID&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
