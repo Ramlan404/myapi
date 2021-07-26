@@ -1,7 +1,9 @@
+__path = process.cwd()
 const ms = require('ms');
 const express = require('express');
 const router = express.Router();
 const fs = require('fs-extra');
+const fetch = require('node-fetch');
 
 const {
     Base,
@@ -97,6 +99,20 @@ const {
     shopeeSearch,
     textpro
 } = require('./../lib');
+const {
+  poShadow,
+  poRomantic,
+  poSmoke,
+  poBurnPapper,
+  poNaruto,
+  poLoveMsg,
+  poMsgGrass,
+  poDoubleHeart,
+  poCoffeCup,
+  poLoveText,
+  poButterfly
+} = require("./../lib/utils/photooxy");
+
 const { default: axios } = require('axios');
 const _dbapikey = JSON.parse(fs.readFileSync('./database/premium.json'));
 premium.expiredCheck(_dbapikey);
@@ -105,6 +121,14 @@ Array.prototype.random = function() {
     return this[Math.floor((Math.random() * this.length))];
 }
 
+function random(){
+const array = []
+const number = '1234567890'
+for (let i = 0; i < 4; i++){
+array.push(number.charAt(Math.floor(Math.random() * number.length)))
+}
+return array.join('')
+}
 router.get('/shopee-search', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
@@ -852,7 +876,7 @@ router.get('/kompasTV-news', async(req, res) => {
     }
 })
 
-router.get('/subnet-lookup', async(req, res) => {
+router.get('/tools/subnet-lookup', async(req, res) => {
     var ip = req.query.ip
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -873,7 +897,7 @@ router.get('/subnet-lookup', async(req, res) => {
     }
 })
 
-router.get('/cloudflare-resolver', async(req, res) => {
+router.get('/tools/cloudflare-resolver', async(req, res) => {
     var domain = req.query.domain
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -894,7 +918,7 @@ router.get('/cloudflare-resolver', async(req, res) => {
     }
 })
 
-router.get('/md5-encrypt', async(req, res) => {
+router.get('/tools/md5-encrypt', async(req, res) => {
     var teks = req.query.teks
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -915,7 +939,7 @@ router.get('/md5-encrypt', async(req, res) => {
     }
 })
 
-router.get('/subdomain', async(req, res) => {
+router.get('/tools/subdomain', async(req, res) => {
     var ip = req.query.ip
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -950,7 +974,7 @@ router.get('/anoboy-last', async(req, res) => {
     }
 })
 
-router.get('/random-wallanime', async(req, res) => {
+router.get('/random/wallanime', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -964,7 +988,7 @@ router.get('/random-wallanime', async(req, res) => {
     }
 })
 
-router.get('/random-kemono', async(req, res) => {
+router.get('/random/kemono', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -978,7 +1002,7 @@ router.get('/random-kemono', async(req, res) => {
     }
 })
 
-router.get('/random-neko', async(req, res) => {
+router.get('/random/neko', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1013,7 +1037,7 @@ router.get('/mediafire-dl', async(req, res) => {
     }
 })
 
-router.get('/openport-checker', async(req, res) => {
+router.get('/tools/openport-checker', async(req, res) => {
     var domain = req.query.domain
     var port = req.query.port
     var apikey = req.query.apikey
@@ -1035,7 +1059,7 @@ router.get('/openport-checker', async(req, res) => {
     }
 })
 
-router.get('/tebak-gambar', async(req, res) => {
+router.get('/game/tebak-gambar', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1091,7 +1115,7 @@ router.get('/search-grup', async(req, res) => {
     }
 })
 
-router.get('/tebak-anime', async(req, res) => {
+router.get('/game/tebak-anime', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1112,7 +1136,7 @@ router.get('/tebak-anime', async(req, res) => {
     }
 })
 
-router.get('/caklontong', async(req, res) => {
+router.get('/game/caklontong', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1133,7 +1157,7 @@ router.get('/caklontong', async(req, res) => {
     }
 })
 
-router.get('/family100', async(req, res) => {
+router.get('/game/family100', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1154,7 +1178,7 @@ router.get('/family100', async(req, res) => {
     }
 })
 
-router.get('/random-darkjoke', async(req, res) => {
+router.get('/random/darkjoke', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1174,7 +1198,7 @@ router.get('/random-darkjoke', async(req, res) => {
 })
 
 
-router.get('/random-memeindo', async(req, res) => {
+router.get('/random/memeindo', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1193,7 +1217,7 @@ router.get('/random-memeindo', async(req, res) => {
     }
 })
 
-router.get('/random-cehor', async(req, res) => {
+router.get('/random/cehor', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1215,7 +1239,7 @@ router.get('/random-cehor', async(req, res) => {
     }
 })
 
-router.get('/random-fakta', async(req, res) => {
+router.get('/random/fakta', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1234,7 +1258,7 @@ router.get('/random-fakta', async(req, res) => {
     }
 })
 
-router.get('/random-katabijak', async(req, res) => {
+router.get('/random/katabijak', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1253,7 +1277,7 @@ router.get('/random-katabijak', async(req, res) => {
     }
 })
 
-router.get('/random-motivasi', async(req, res) => {
+router.get('/random/motivasi', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1272,7 +1296,7 @@ router.get('/random-motivasi', async(req, res) => {
     }
 })
 
-router.get('/random-bucin', async(req, res) => {
+router.get('/random/bucin', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1291,7 +1315,7 @@ router.get('/random-bucin', async(req, res) => {
     }
 })
 
-router.get('/random-pantun', async(req, res) => {
+router.get('/random/pantun', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1310,7 +1334,7 @@ router.get('/random-pantun', async(req, res) => {
     }
 })
 
-router.get('/random-quotes', async(req, res) => {
+router.get('/random/quotes', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1330,7 +1354,7 @@ router.get('/random-quotes', async(req, res) => {
     }
 })
 
-router.get('/random-loli', async(req, res) => {
+router.get('/random/loli', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1344,7 +1368,7 @@ router.get('/random-loli', async(req, res) => {
     }
 })
 
-router.get('/random-waifu', async(req, res) => {
+router.get('/random/waifu', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1358,7 +1382,7 @@ router.get('/random-waifu', async(req, res) => {
     }
 })
 
-router.get('/random-husbu', async(req, res) => {
+router.get('/random/husbu', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1372,7 +1396,7 @@ router.get('/random-husbu', async(req, res) => {
     }
 })
 
-router.get('/random-shota', async(req, res) => {
+router.get('/random/shota', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1596,7 +1620,7 @@ router.get('/ytmp4', async(req, res) => {
 })
 
 
-router.get('/asupan', async(req, res) => {
+router.get('/random/asupan', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -1622,7 +1646,7 @@ router.get('/asupan', async(req, res) => {
 })
 
 
-router.get('/whois', async(req, res) => {
+router.get('/tools/whois', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -1970,12 +1994,17 @@ router.get('/checkapikey', async(req, res) => {
             message: 'Input your apikey'
         })
     } else {
-        const expired = (await premium.getPremiumExpired(apikeynyaaa)).expired
-        const cekvip = ms(expired - Date.now())
-        res.send({
-            code: 200,
-            message: `Apikey Expire at: ${cekvip}`
-        })
+        try {
+            const expired = (await premium.getPremiumExpired(apikeynyaaa)).expired
+            const cekvip = ms(expired - Date.now())
+            res.send({
+                code: 200,
+                message: `Apikey Expire at: ${cekvip}`
+            })
+        } catch {
+            __dirname = process.cwd();
+            return res.status(403).sendFile(__dirname + '/views/403.html');
+        }
     }
 })
 
@@ -2018,7 +2047,7 @@ router.get('/listapikey', async(req, res) => {
     }
 })
 
-router.get('/base64', async(req, res) => {
+router.get('/tools/base64', async(req, res) => {
     const encode = req.query.encode
     const decode = req.query.decode
     var apikey = req.query.apikey
@@ -2053,7 +2082,7 @@ router.get('/base64', async(req, res) => {
     }
 })
 
-router.get('/ipgeolocation', async(req, res) => {
+router.get('/tools/ipgeolocation', async(req, res) => {
     const ip = req.query.ip
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -2214,6 +2243,33 @@ router.get('/brainly', async(req, res) => {
         })
     }
 })
+router.get("/photooxy/shadow", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!q) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+    poShadow(text)
+    .then((data) => {
+        var buffer = await axios.get(data.url, {
+            responseType: 'arraybuffer',
+            headers: {
+                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+            }
+        })
+        res.end(buffer.data)
+    }
+})
+})
 
 router.get('/textpro/:id', async(req, res) => {
     var id = req.params.id
@@ -2244,7 +2300,45 @@ router.get('/textpro/:id', async(req, res) => {
         if (id == 'thundername') {
             image = await textpro.tpthunder(text)
         }
-
+        if (id == 'neon') {
+            image = await textpro.tpneon(text)
+        }
+        if (id == 'devilwings') {
+            image = await textpro.tpdevilwings(text)
+        }
+        if (id == 'cloudtext') {
+            image = await textpro.tpcloud(text)
+        }
+        if (id == 'bloodtext') {
+            image = await textpro.tpblood(text)
+        }
+        if (id == 'bloodtext2') {
+            image = await textpro.tpblood2(text)
+        }
+        if (id == 'steeltext') {
+            image = await textpro.tpsteel(text)
+        }
+        if (id == 'lavatext') {
+            image = await textpro.tplava(text)
+        }
+        if (id == 'toxiclogo') {
+            image = await textpro.tptoxic(text)
+        }
+        if (id == 'dropwater') {
+            image = await textpro.tpdropwater(text)
+        }
+        if (id == 'metaldark') {
+            image = await textpro.tpmetaldark(text)
+        }
+        if (id == 'sandwrite') {
+            image = await textpro.tpsandwrite(text)
+        }
+        if (id == '3dwater') {
+            image = await textpro.3dwater(text)
+        }
+        if (id == 'graffiti') {
+            image = await textpro.tpg1(text)
+        }
         var buffer = await axios.get(image, {
             responseType: 'arraybuffer',
             headers: {
@@ -2278,7 +2372,7 @@ router.get('/textpro2/:id', async(req, res) => {
         })
     } else {
         var image = ""
-        if (id == 'wallgraffiti') {
+        if (id == 'graffiti2') {
             image = await textpro.tpwl(text1, text2)
         }
         if (id == 'phlogo') {
@@ -2287,7 +2381,39 @@ router.get('/textpro2/:id', async(req, res) => {
         if (id == 'glitch') {
             image = await textpro.tpglitch(text1, text2)
         }
-
+        if (id == 'graffiti3') {
+            image = await textpro.tpcg(text1, text2)
+        }
+        if (id == 'layeredtext') {
+            image = await textpro.tplay(text1, text2)
+        }
+        if (id == 'vintage') {
+            image = await textpro.tpvin(text1, text2)
+        }
+        if (id == '3dspace') {
+            image = await textpro.tpspc(text1, text2)
+        }
+        if (id == 'stonetext') {
+            image = await textpro.tpstone(text1, text2)
+        }
+        if (id == 'avengers') {
+            image = await textpro.tpavg(text1, text2)
+        }
+        if (id == 'marvellogo') {
+            image = await textpro.tpmarvel(text1, text2)
+        }
+        if (id == '3dmetal') {
+            image = await textpro.tp3dmetal(text1, text2)
+        }
+        if (id == 'lionlogo') {
+            image = await textpro.tplion(text1, text2)
+        }
+        if (id == 'wolflogo') {
+            image = await textpro.tpwolf(text1, text2)
+        }
+        if (id == 'ninjalogo') {
+            image = await textpro.tpninja(text1, text2)
+        }                                
 
         var buffer = await axios.get(image, {
             responseType: 'arraybuffer',
@@ -2298,5 +2424,27 @@ router.get('/textpro2/:id', async(req, res) => {
         res.end(buffer.data)
     }
 })
+router.get('/other/tahta', async(req, res) => {
+    var q = req.query.q
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
 
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!q) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  var acak = random()
+  let hasil = 'https://api.zeks.xyz/api/hartatahta?apikey=YTRAMLANID&text='+ q +''
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
+ 
 module.exports = router
