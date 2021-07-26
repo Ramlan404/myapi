@@ -2259,7 +2259,7 @@ router.get("/photooxy/shadow", async(req, res) => {
         })
     } else {
     poShadow(text)
-    .then((data) => {
+    .then(async(data) => {
         var buffer = await axios.get(data.url, {
             responseType: 'arraybuffer',
             headers: {
