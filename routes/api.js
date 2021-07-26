@@ -2333,7 +2333,7 @@ router.get('/textpro/:id', async(req, res) => {
             image = await textpro.tpsandwrite(text)
         }
         if (id == '3dwater') {
-            image = await textpro.3dwater(text)
+            image = await textpro.tp3dwater(text)
         }
         if (id == 'graffiti') {
             image = await textpro.tpg1(text)
