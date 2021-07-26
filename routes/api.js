@@ -2267,7 +2267,6 @@ router.get("/photooxy/shadow", async(req, res) => {
             }
         })
         res.end(buffer.data)
-    }
 })
 })
 
