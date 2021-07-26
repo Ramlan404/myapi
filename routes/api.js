@@ -2268,7 +2268,34 @@ router.get("/photooxy/shadow", async(req, res) => {
         })
         res.end(buffer.data)
 })
-})
+//
+router.get("/photooxy/shadow", async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  poShadow(text)
+    .then(async(data) => {
+      const result = {
+        status: true,
+        code: 200,
+        creator: `${creator}`,
+        result: data.url
+      }
+      res.json(result)
+      }
+    })
+});
 
 router.get('/textpro/:id', async(req, res) => {
     var id = req.params.id
