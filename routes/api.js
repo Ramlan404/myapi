@@ -2262,7 +2262,7 @@ router.get("/photooxy/shadow", async(req, res) => {
       const result = {
         status: true,
         code: 200,
-        creator: 'Ramlan ID'
+        creator: 'Ramlan ID',
         url: data.url
       }        
             res.send(result)
