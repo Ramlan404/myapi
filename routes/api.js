@@ -2258,12 +2258,12 @@ router.get("/photooxy/shadow", async(req, res) => {
             message: 'masukan parameter'
         })
     } else {
-        poShadow(url).then(data => {
+        poShadow(text).then(data => {
       const result = {
         status: true,
         code: 200,
         creator: 'Ramlan ID'
-        result: data.url
+        url: data.url
       }        
             res.send(result)
         })
