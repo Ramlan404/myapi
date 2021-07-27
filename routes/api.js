@@ -133,6 +133,59 @@ array.push(number.charAt(Math.floor(Math.random() * number.length)))
 }
 return array.join('')
 }
+router.get('/ucapan', async (req, res) => {
+        timeZone = req.query.timeZone
+    if (!timeZone) return res.json({ status : false, creator : `Aqulzz`, message : "masukan parameter timeZone"})
+
+    try {
+    let WaktuJKt = new Date().toLocaleString("en-US", {timeZone: timeZone});
+
+		function tamHari(WaktuJKt){
+            var date = new Date(WaktuJKt);
+            var waktoo = date.getHours();
+            switch(waktoo){
+                case 0: waktoo = "Tengah Malam🌚"; break;
+                case 1: waktoo = "Tengah Malam🌒"; break;
+                case 2: waktoo = "Dini Hari🌒"; break;
+                case 3: waktoo = "Dini Hari🌓"; break;
+                case 4: waktoo = "Subuh🌔"; break;
+                case 5: waktoo = "Subuh🌔"; break;
+                case 6: waktoo = "Pagi🌝"; break;
+                case 7: waktoo = "Pagi🌝"; break;
+                case 8: waktoo = "Pagi🌝"; break;
+                case 9: waktoo = "Pagi"; break;
+                case 10: waktoo = "Pagi🌞"; break;
+                case 11: waktoo = "Siang🌞"; break;
+                case 12: waktoo = "Siang🌞"; break;
+                case 13: waktoo = "Siang🌞"; break;
+                case 14: waktoo = "Siang🌞"; break;
+                case 15: waktoo = "Sore🌝"; break;
+                case 16: waktoo = "Sore🌝"; break;
+                case 17: waktoo = "Sore🌖"; break;
+                case 18: waktoo = "Magrib🌘"; break;
+                case 19: waktoo = "Magrib🌚"; break;
+                case 20: waktoo = "Malam🌚"; break;
+                case 21: waktoo = "Malam🌚"; break;
+                case 22: waktoo = "Malam🌚"; break;
+                case 23: waktoo = "Tengah Malam🌚"; break;
+            }
+            var tampilHari = "" + waktoo;
+            return `${tampilHari}`
+        }
+
+    res.json({
+        status: true,
+        creator: `Aqulzz`,
+        message: `Jangan lupa subs YT RAMLAN ID`,
+        result : tamHari(WaktuJKt)
+    })
+    } catch (e) {
+        console.log(e)
+        res.json({ status : false, creator : `Aqulzz`, message : "kenapa error? karna lu wibu"})
+    }
+
+})
+
 router.get('/shopee-search', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
