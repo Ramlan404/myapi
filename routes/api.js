@@ -204,7 +204,7 @@ router.get('/hitungmundur', async (req, res) => {
 			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-			return days + "Hari  " + hours + "Jam " + minutes + "Menit " + seconds + "Detik"
+			return days + "Hari " + hours + "Jam " + minutes + "Menit " + seconds + "Detik"
 		}
 
     res.json({
