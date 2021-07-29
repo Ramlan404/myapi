@@ -186,6 +186,40 @@ router.get('/ucapan', async (req, res) => {
 
 })
 
+router.get('/hitungmundur', async (req, res) => {
+        bulan = req.query.bulan
+        tanggal = req.query.tanggal
+
+    if (!bulan) return res.json({ status : false, creator : `Aqulzz`, message : "masukan parameter bulan"})
+    if (!tanggal) return res.json({ status : false, creator : `Aqulzz`, message : "masukan parameter tanggal"})
+
+    try {
+    var countDownDate = new Date(`${bulan} ${tanggal}, 2021 00:00:00`).getTime();
+        var now = new Date().getTime();
+
+		function kurangwaktu(waktunya, waktuskrg){
+			var distance = waktunya - waktuskrg;
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			return days + "Hari  " + hours + "Jam " + minutes + "Menit " + seconds + "Detik"
+		}
+
+    res.json({
+        status: true,
+        creator: `Aqulzz`,
+        message: `Jangan lupa subs YT RAMLAN ID`,
+        result : kurangwaktu(countDownDate, now)
+    })
+    } catch (e) {
+        console.log(e)
+        res.json({ status : false, creator : `Aqulzz`, message : "kenapa eror? karna lu wibu"})
+    }
+
+})
+
 router.get('/shopee-search', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
