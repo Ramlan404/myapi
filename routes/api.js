@@ -34,8 +34,6 @@ const {
     whoisip,
     ytmp4,
     playyt,
-    yta,
-    ytv,
     fbdl,
     tiktokDown,
     ytsearch,
@@ -119,6 +117,7 @@ const {
   poParty
 } = require("./../lib/utils/photooxy");
 
+const { yta, ytv } = require("./../lib/utils/ytdl");
 const { default: axios } = require('axios');
 const _dbapikey = JSON.parse(fs.readFileSync('./database/premium.json'));
 premium.expiredCheck(_dbapikey);
