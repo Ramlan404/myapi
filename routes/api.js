@@ -34,6 +34,8 @@ const {
     whoisip,
     ytmp4,
     playyt,
+    yta,
+    ytv,
     fbdl,
     tiktokDown,
     ytsearch,
@@ -1538,6 +1540,48 @@ router.get('/ytmp3', async(req, res) => {
         })
     } else {
         ytmp3(url).then(data => {
+            res.send(data)
+        })
+    }
+})
+
+router.get('/ytaudio', async(req, res) => {
+    var url = req.query.url
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!url) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        yta(url).then(data => {
+            res.send(data)
+        })
+    }
+})
+
+router.get('/ytvideo', async(req, res) => {
+    var url = req.query.url
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!url) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        ytv(url).then(data => {
             res.send(data)
         })
     }
