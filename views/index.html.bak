@@ -194,8 +194,6 @@
                 <li class="nav-item"><a class="nav-link" href="/api/smule-dl?url=https://www.smule.com/recording/lewis-capaldi-someone-you-loved/2027750707_2937753991&apikey=YOUR_APIKEY">• Smule</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/ytmp4?url=https://youtu.be/1WUbFJ1rzWw&apikey=YOUR_APIKEY">• Ytmp4</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/ytmp3?url=https://youtu.be/1WUbFJ1rzWw&apikey=YOUR_APIKEY">• Ytmp3</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/ytvideo?url=https://youtu.be/1WUbFJ1rzWw&apikey=YOUR_APIKEY">• Ytmp4 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/ytaudio?url=https://youtu.be/1WUbFJ1rzWw&apikey=YOUR_APIKEY">• Ytmp3 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/play?q=sayang&apikey=YOUR_APIKEY">• Youtube Play</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/tiktok?url=https://vt.tiktok.com/ZGJSpTAeG/&apikey=YOUR_APIKEY">• Tiktok</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/ytshort-dl?url=https://youtube.com/shorts/NBAXxzmB3E0?feature=share&apikey=YOUR_APIKEY">• Youtube-Short</a></li>
@@ -214,6 +212,15 @@
             </a>
             <div class="collapse" id="ui-basic6">
               <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/api/shota?apikey=YOUR_APIKEY">• Shota</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/husbu?apikey=YOUR_APIKEY">• Husbu</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/waifu?apikey=YOUR_APIKEY">• Waifu</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/loli?apikey=YOUR_APIKEY">• Loli</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/neko?apikey=YOUR_APIKEY">• Nekonime</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/kemono?apikey=YOUR_APIKEY">• Kemono</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/sagiri?apikey=YOUR_APIKEY">• Sagiri</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/megumin?apikey=YOUR_APIKEY">• Megumin</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/wallanime?apikey=YOUR_APIKEY">• Wallanime</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/samehadaku-search?q=boruto&apikey=YOUR_APIKEY">• Samehadaku-Search</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/mangatoon-search?q=daemon&apikey=YOUR_APIKEY">• MangaToon-Search</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/konachan-search?q=azur_lane&apikey=YOUR_APIKEY">• Konachan</a></li>
@@ -240,10 +247,6 @@
             <div class="collapse" id="ui-basic7">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="/api/random/asupan?apikey=YOUR_APIKEY">• Asupan</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/shota?apikey=YOUR_APIKEY">• Shota</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/husbu?apikey=YOUR_APIKEY">• Husbu</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/waifu?apikey=YOUR_APIKEY">• Waifu</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/loli?apikey=YOUR_APIKEY">• Loli</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/random/darkjoke?apikey=YOUR_APIKEY">• Darkjoke</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/random/memeindo?apikey=YOUR_APIKEY">• Meme Indo</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/random/quotes?apikey=YOUR_APIKEY">• Quotes</a></li>
@@ -253,9 +256,6 @@
                 <li class="nav-item"><a class="nav-link" href="/api/random/fakta?apikey=YOUR_APIKEY">• Fakta</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/random/katabijak?apikey=YOUR_APIKEY">• Kata-Bijak</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/random/motivasi?apikey=YOUR_APIKEY">• Motivasi</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/neko?apikey=YOUR_APIKEY">• Nekonime</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/kemono?apikey=YOUR_APIKEY">• Kemono</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/random/wallanime?apikey=YOUR_APIKEY">• Wallanime</a></li>
               </ul>
             </div>
           </li>
@@ -286,13 +286,13 @@
             </a>
             <div class="collapse" id="ui-basic9">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="/api/neko-nsfw?apikey=YOUR_APIKEY">• Neko-NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/blowjob-nsfw?apikey=YOUR_APIKEY">• Blowjob-NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/kemonomimi-nsfw?apikey=YOUR_APIKEY">• Kemonomimi-NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/kitsune-nsfw?apikey=YOUR_APIKEY">• Kitsune-NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/yuri-nsfw?apikey=YOUR_APIKEY">• Yuri-NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/boobs-nsfw?apikey=YOUR_APIKEY">• Boobs-NSFW</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/kuni-nsfw?apikey=YOUR_APIKEY">• Kuni-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/neko?apikey=YOUR_APIKEY">• Neko-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/blowjob?apikey=YOUR_APIKEY">• Blowjob-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/kemonomimi?apikey=YOUR_APIKEY">• Kemonomimi-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/kitsune?apikey=YOUR_APIKEY">• Kitsune-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/yuri?apikey=YOUR_APIKEY">• Yuri-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/boobs?apikey=YOUR_APIKEY">• Boobs-NSFW</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/nsfw/kuni?apikey=YOUR_APIKEY">• Kuni-NSFW</a></li>
               </ul>
             </div>
           </li>
@@ -382,20 +382,21 @@
             <div class="collapse" id="photooxy">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="/api/photooxy/shadow?apikey=YOUR_APIKEY&text=Ramlan">• Shadow Text</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/smoketext?apikey=YOUR_APIKEY&text=Ramlan">• Smoke</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/coffetext?apikey=YOUR_APIKEY&text=Ramlan">• Coffe</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/coffetext2?apikey=YOUR_APIKEY&text=Ramlan">• Coffe2</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/glowingneon?apikey=YOUR_APIKEY&text=Ramlan">• Glowing Neon</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/whitecube?apikey=YOUR_APIKEY&text=Ramlan">• White Cube</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/nightsky?apikey=YOUR_APIKEY&text=Ramlan">• Night Sky</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/furtext?apikey=YOUR_APIKEY&text=Ramlan">• Fur</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/flamingtext?apikey=YOUR_APIKEY&text=Ramlan">• Flaming Text</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/neonlight?apikey=YOUR_APIKEY&text=Ramlan">• Neon Light</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/scarytext?apikey=YOUR_APIKEY&text=Ramlan">• Scary Text</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/woodtext?apikey=YOUR_APIKEY&text=Ramlan">• Wood</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/silktext?apikey=YOUR_APIKEY&text=Ramlan">• Silk</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/flowertext?apikey=YOUR_APIKEY&text=Ramlan">• Flower</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/photooxy/partytext?apikey=YOUR_APIKEY&text=Ramlan">• Party Text</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/smoketext?apikey=YOUR_APIKEY&text=Ramlan">• Smoke Text</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/romancetext?apikey=YOUR_APIKEY&text=Ramlan">• Romance</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/carvedwood?apikey=YOUR_APIKEY&text=Ramlan">• Carved Wood</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/harrypotter?apikey=YOUR_APIKEY&text=Ramlan">• Harry Potter</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/flamingtext?apikey=YOUR_APIKEY&text=Ramlan">• Flamming Text</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/falleaves?apikey=YOUR_APIKEY&text=Ramlan">• Fall Leaves</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/underwater?apikey=YOUR_APIKEY&text=Ramlan">• Under Water</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/wolfmetal?apikey=YOUR_APIKEY&text=Ramlan">• Wolf Metal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/woodboard?apikey=YOUR_APIKEY&text=Ramlan">• Wood Board</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/woodheart?apikey=YOUR_APIKEY&text=Ramlan">• Wood Heart</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/undergrass?apikey=YOUR_APIKEY&text=Ramlan">• Under Grass</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/coffetext?apikey=YOUR_APIKEY&text=Ramlan">• Coffe Text</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/lovetext?apikey=YOUR_APIKEY&text=Ramlan">• Love Text</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/burnpaper?apikey=YOUR_APIKEY&text=Ramlan">• Burn Paper</a></li>
+                <li class="nav-item"><a class="nav-link" href="/api/photooxy/lovemessage?apikey=YOUR_APIKEY&text=Ramlan">• Love Message</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/photooxy/pubglogo?apikey=YOUR_APIKEY&text1=Ramlan&text2=Raraa">• PUBG Logo</a></li>
               </ul>
             </div>
@@ -412,7 +413,6 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="/api/other/tahta?q=Ramlan&apikey=YOUR_APIKEY">• Tahta By MFarelS</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/other/nulis?text=Ramlan&apikey=YOUR_APIKEY">• Nulis</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/other/ttp?text=Ramlan&apikey=YOUR_APIKEY">• TTP</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/ucapan?timeZone=Asia/Jakarta">• Ucapan</a></li>
                 <li class="nav-item"><a class="nav-link" href="/api/hitungmundur?tanggal=06&bulan=11">• Hitungmundur</a></li>
               </ul>
