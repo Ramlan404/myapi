@@ -1364,7 +1364,21 @@ router.get('/random/memeindo', async(req, res) => {
         })
     }
 })
+router.get('/random/memeindo2', async(req, res) => {
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
 
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+  var acak = random()
+  let hasil = 'https://api.xteam.xyz/randomimage/meme2?APIKEY=BayuRain57'
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
 router.get('/random/cehor', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -1822,7 +1836,36 @@ router.get('/random/asupan', async(req, res) => {
     })
 })
 
+router.get('/random/gachacewek', async(req, res) => {
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
 
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+  var acak = random()
+  let hasil = 'https://api.xteam.xyz/randomimage/cewe?APIKEY=BayuRain57'
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
+router.get('/random/gachacowok', async(req, res) => {
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+  var acak = random()
+  let hasil = 'https://api.xteam.xyz/randomimage/cowo?APIKEY=BayuRain57'
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
 router.get('/tools/whois', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
