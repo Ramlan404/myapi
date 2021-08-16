@@ -1830,6 +1830,7 @@ router.get('/random/asupan', async(req, res) => {
             if (node["__typename"] == "GraphVideo") video.push(node["video_url"])
         } catch {}
     }
+    console.log(video)
     res.json({
         status: 200,
         url: video.random()
