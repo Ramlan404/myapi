@@ -1820,7 +1820,7 @@ router.get('/random/asupan', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     }
     var username = ["ptl_repost", "girlsweet_id", "goodlookings.id", "penyegaranmata.idn", "xi.aoxiao59", "dailyjapanesevideos"]
-    username = username.random()
+    username = username[Math.floor(Math.random()*username.length)]
     var result = await axios.get(`https://www.instagram.com/${username}/channel/?__a=1`, { headers: { cookie: "ig_nrcb=1; mid=YMTE3wAEAAGuO-VaU9KUBDQFHeuB; ig_did=75827AA1-F366-4BB4-87B7-800F44C90E0C; csrftoken=5RxmS54LXAr57p8enfG2cw9oZ9FyvoUt; ds_user_id=48544354370; sessionid=48544354370%3AlqSxQekK40eOFU%3A16; rur=\"ATN\\05448544354370\\0541658635689:01f7b64bea46a6d32a9b8914573063423b50a303e6c1f6bb5bdc37ea132488c64e2c4171\"" } })
     result = result.data["graphql"]["user"]["edge_owner_to_timeline_media"]["edges"]
     var video = []
