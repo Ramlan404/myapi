@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs-extra');
 const fetch = require('node-fetch');
-const spawn = require('child_process');
+const { spawn } = require("child_process");
 
 const {
     Base,
