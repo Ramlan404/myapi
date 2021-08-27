@@ -27,7 +27,6 @@ const moddroid = (query) => new Promise((resolve, reject) => {
             }
             resolve({
                 status: 200,
-                author: 'Ramlan ID'
                 data: result
             })
         }).catch({

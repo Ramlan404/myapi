@@ -2,20 +2,20 @@ const { default: Axios } = require('axios')
 const cheerio = require('cheerio')
 
 const moddroid = (query) => new Promise((resolve, reject) => {
-    Axios.get(`https://moddroid.com/?s=${query}`)
+    Axios.get(`https://www.happymod.com/search.html?q=${query}`)
         .then(({ data }) => {
             const $ = cheerio.load(data)
             let title = []
             let url = []
             let img = []
-            $('div.row > div.col-12 > a').get().map((rest) => {
+            $('section.section-page-white > div.pdt-app-box > a').get().map((rest) => {
                 url.push($(rest).attr('href'))
             })
-            $('div.row > div.col-12 > a').get().map((rest) => {
+            $('section.section-page-white > div.pdt-app-box > a').get().map((rest) => {
                 title.push($(rest).attr('title'))
             })
-            $('div.row > div.col-12 > a > div.flex-shrink-0 > img').get().map((rest) => {
-                img.push($(rest).attr('src'))
+            $('section.section-page-white > div.pdt-app-box > a > img').get().map((rest) => {
+                img.push($(rest).attr('data-original'))
             })
             let result = []
             for (let i = 0; i < url.length; i++) {

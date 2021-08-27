@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs-extra');
 const fetch = require('node-fetch');
+const spawn = require('child_process');
 
 const {
     Base,
@@ -201,6 +202,71 @@ router.get('/hitungmundur', async (req, res) => {
         res.json({ status : false, creator : `Aqulzz`, message : "kenapa eror? karna lu wibu"})
     }
 
+})
+
+router.get('/other/nuliskiri', async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+    var splitText = text.replace(/(\S+\s*){1,9}/g, '$&\n')
+    var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+                spawn('convert', [
+                    __path + '/media/nulis/images/buku/sebelumkiri.jpg',
+                    '-font',
+                    __path + '/media/nulis/font/Indie-Flower.ttf',
+                    '-size',
+                    '960x1280',
+                    '-pointsize',
+                    '22',
+                    '-interline-spacing',
+                    '2',
+                    '-annotate',
+                    '+140+153',
+                    fixHeight,
+                    __path + '/media/nulis/images/buku/setelahkiri.jpg'
+                ])
+                .on('error', () => {
+                res.json({ status : false,
+                creator : `Ramlan ID`,
+                message : "kenapa eror? karna lu wibu"})
+                })
+                .on('exit', () => {
+                    res.sendFile(__path +'/media/nulis/images/buku/setelahkiri.jpg')
+                })
+               }
+            })
+router.get('/other/tts', async (req, res) => {
+  var codebahasa = 'id'
+  var text = req.query.text
+  var apikey = req.query.apikey
+  
+  var isPremium = await premium.checkPremiumUser(apikey);
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+  const ttsGB = require('node-gtts')(codebahasa)
+            ttsGB.save(__path + '/media/sound/tts.mp3', text, function () {
+            res.sendFile(__path + '/media/sound/tts.mp3')
+        })
+        }
 })
 
 router.get('/shopee-search', async(req, res) => {
@@ -1373,7 +1439,7 @@ router.get('/random/memeindo2', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.xteam.xyz/randomimage/meme2?APIKEY=BayuRain57'
+  let hasil = 'https://api.xteam.xyz/randomimage/meme2?APIKEY=YTRAMLANID'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1845,7 +1911,7 @@ router.get('/random/gachacewek', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.xteam.xyz/randomimage/cewe?APIKEY=BayuRain57'
+  let hasil = 'https://api.xteam.xyz/randomimage/cewe?APIKEY=YTRAMLANID'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1860,7 +1926,7 @@ router.get('/random/gachacowok', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.xteam.xyz/randomimage/cowo?APIKEY=BayuRain57'
+  let hasil = 'https://api.xteam.xyz/randomimage/cowo?APIKEY=YTRAMLANID'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
