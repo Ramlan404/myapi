@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs-extra');
 const fetch = require('node-fetch');
-const { text2png } = require("text2png");
 const { spawn } = require("child_process");
 
 const {
@@ -3240,7 +3239,7 @@ router.get('/nulis', async(req, res) => {
   }
  })
 router.get('/other/ttp', async(req, res) => {
-    var text = req.query.text
+/*    var text = req.query.text
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -3264,6 +3263,6 @@ await fs.writeFileSync(__path +'/tmp/'+acak+'ttp.png', text2png(text, {
                     strokeWidth: 15
                 }))
   res.sendFile(__path +'/tmp/'+acak+'ttp.png')
-  }
+  }*/
  })
 module.exports = router
