@@ -2011,7 +2011,7 @@ router.get('/ytmp4', async(req, res) => {
 })
 
 
-router.get('/random/asupan', async(req, res) => {
+/*router.get('/random/asupan', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
 
@@ -2035,7 +2035,7 @@ router.get('/random/asupan', async(req, res) => {
         creator: 'Ramlan ID',
         url: video.random()
     })
-})
+})*/
 
 router.get('/random/gachacewek', async(req, res) => {
     var apikey = req.query.apikey
