@@ -2032,7 +2032,7 @@ router.get('/random/asupan', async(req, res) => {
     }
     res.json({
         status: 200,
-        creator: 'Ramlan ID'
+        creator: 'Ramlan ID',
         url: video.random()
     })
 })
