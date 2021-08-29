@@ -2021,7 +2021,7 @@ router.get('/random/asupan', async(req, res) => {
     }
     var username = ["ptl_repost", "girlsweet_id", "goodlookings.id", "penyegaranmata.idn", "xi.aoxiao59", "dailyjapanesevideos"]
     username = username.random()
-    var result = await axios.get(`https://www.instagram.com/${username}/channel/?__a=1`, { headers: { cookie: "ig_did=0FCEAEE0-4EC5-4A70-8E58-014C4AE4DF4D; ig_nrcb=1; mid=YSuOOQALAAGkt2WPJrNcElOGLEtM; csrftoken=SosDB0arfALrveBISdjHWNSlFAw6a8RC; ds_user_id=44290388479; sessionid=44290388479:6MkMXJ3mmv3Q9I:23; shbid="10844\05444290388479\0541661780530:01f78f87ebcb361e01979adbed81c9c71bdb92de05f25296c481f492e1c271addcbd0e16"; shbts="1630244530\05444290388479\0541661780530:01f776247934475024cb60eb813af93360c4c62895812a9fbb2c433224eb53ce6012b5a9"; rur="VLL\05444290388479\0541661781495:01f7eb475cdc2d217cacfc4be90d79f2c26cabe6a6478a9540b81ffe033ec56cd4db672c"\"" } })
+    var result = await axios.get(`https://www.instagram.com/${username}/channel/?__a=1`, { headers: { cookie: ig_did=0FCEAEE0-4EC5-4A70-8E58-014C4AE4DF4D; ig_nrcb=1; mid=YSuOOQALAAGkt2WPJrNcElOGLEtM; csrftoken=SosDB0arfALrveBISdjHWNSlFAw6a8RC; ds_user_id=44290388479; sessionid=44290388479:6MkMXJ3mmv3Q9I:23; shbid="10844\05444290388479\0541661780530:01f78f87ebcb361e01979adbed81c9c71bdb92de05f25296c481f492e1c271addcbd0e16"; shbts="1630244530\05444290388479\0541661780530:01f776247934475024cb60eb813af93360c4c62895812a9fbb2c433224eb53ce6012b5a9"; rur="VLL\05444290388479\0541661781495:01f7eb475cdc2d217cacfc4be90d79f2c26cabe6a6478a9540b81ffe033ec56cd4db672c" } })
     result = result.data["graphql"]["user"]["edge_owner_to_timeline_media"]["edges"]
     var video = []
     for (let x in result) {
