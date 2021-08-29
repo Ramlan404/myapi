@@ -2030,13 +2030,11 @@ router.get('/random/asupan', async(req, res) => {
             if (node["__typename"] == "GraphVideo") video.push(node["video_url"])
         } catch {}
     }
-        var buffer = await axios.get(video.random(), {
-            responseType: 'arraybuffer',
-            headers: {
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
-            }
-        })
-        res.end(buffer.data)
+    res.json({
+        status: 200,
+        creator: 'Ramlan ID',
+        url: video.random()
+    })
 })
 
 router.get('/random/gachacewek', async(req, res) => {
