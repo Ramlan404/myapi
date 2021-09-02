@@ -15,17 +15,14 @@ const {
     newsline,
     amazonsearch,
     ramalanjodoh,
-    tiktokstalk,
     wpsearch,
     detiknews,
-    ytstalk,
     imagesearchh,
     artinama,
     igstalk,
     pinterest,
     texttoqrcode,
     stickerlinedl,
-    smuledl,
     topmanga,
     topanime,
     mangasearch,
@@ -35,7 +32,6 @@ const {
     whoisip,
     ytmp4,
     playyt,
-    fbdl,
     tiktokDown,
     ytsearch,
     googlesearch,
@@ -83,9 +79,7 @@ const {
     searchCodePos,
     infotsunami,
     thelazy,
-    apkpure,
     jadwalbola,
-    jalantikus,
     moddroid,
     antaranews,
     growstockSearch,
@@ -95,8 +89,6 @@ const {
     youwatchSearch,
     mangatoonSearch,
     samehadakuSearch,
-    solidfilesdl,
-    sfiledl,
     shopeeSearch,
     textpro
 } = require('./../lib');
@@ -424,60 +416,6 @@ router.get('/shopee-search', async(req, res) => {
     }
 })
 
-router.get('/sfile-dl', async(req, res) => {
-    var url = req.query.url
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!url) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    }
-    if (!url.includes('sfile.mobi')) {
-        res.status(403).send({
-            code: 403,
-            message: 'url tidak benar,, yang valid seperti: https://sfile.mobi/97Fjwx9hQI7'
-        })
-    } else {
-        sfiledl(url).then(data => {
-            res.send(data)
-        })
-    }
-})
-
-router.get('/solidfile-dl', async(req, res) => {
-    var url = req.query.url
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!url) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    }
-    if (!url.includes('solidfiles.com')) {
-        res.status(403).send({
-            code: 403,
-            message: 'url tidak benar,, yang valid seperti: http://www.solidfiles.com/v/2wXw3ryLmq7NR'
-        })
-    } else {
-        solidfilesdl(url).then(data => {
-            res.send(data)
-        })
-    }
-})
-
 router.get('/samehadaku-search', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
@@ -660,26 +598,6 @@ router.get('/moddroid-search', async(req, res) => {
     }
 })
 
-router.get('/jalantikus-search', async(req, res) => {
-    var q = req.query.q
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey, _dbapikey);
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!q) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        jalantikus(q).then(data => {
-            res.send(data)
-        })
-    }
-})
-
 router.get('/jadwal-bola', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
@@ -689,27 +607,6 @@ router.get('/jadwal-bola', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
         jadwalbola().then(data => {
-            res.send(data)
-        })
-    }
-})
-
-router.get('/apkpure-search', async(req, res) => {
-    var q = req.query.q
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!q) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        apkpure(q).then(data => {
             res.send(data)
         })
     }
@@ -1926,27 +1823,6 @@ router.get('/yt-search', async(req, res) => {
         })
     }
 })
-
-router.get('/fbdl', async(req, res) => {
-    var url = req.query.url
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!url) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        fbdl(url).then(data => {
-            res.send(data)
-        })
-    }
-})
 router.get('/tiktok', async(req, res) => {
     var url = req.query.url
     var apikey = req.query.apikey
@@ -2200,28 +2076,6 @@ router.get('/topmanga', async(req, res) => {
     }
 })
 
-router.get('/smule-dl', async(req, res) => {
-    var url = req.query.url
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!url) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        smuledl(url).then(data => {
-            res.send(data)
-        })
-    }
-})
-
-
 router.get('/sline-dl', async(req, res) => {
     var url = req.query.url
     var apikey = req.query.apikey
@@ -2348,26 +2202,6 @@ router.get('/google-image', async(req, res) => {
     }
 })
 
-router.get('/yt-stalk', async(req, res) => {
-    var username = req.query.username
-    var apikey = req.query.apikey
-    var isPremium = premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!username) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        ytstalk(username).then(data => {
-            res.send(data)
-        })
-    }
-})
 
 router.get('/detik-news', async(req, res) => {
     var apikey = req.query.apikey
@@ -2519,48 +2353,6 @@ router.get('/tools/ipgeolocation', async(req, res) => {
         })
     } else {
         ipgeolocation(ip).then(data => {
-            res.send(data)
-        })
-    }
-})
-
-router.get('/wattpad', async(req, res) => {
-    var q = req.query.q
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!q) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        wpsearch(q).then(data => {
-            res.send(data)
-        })
-    }
-})
-
-router.get('/tiktok-stalk', async(req, res) => {
-    var username = req.query.username
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!username) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        tiktokstalk(username).then(data => {
             res.send(data)
         })
     }
