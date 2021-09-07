@@ -386,7 +386,7 @@ router.get('/other/tts', async (req, res) => {
     }
     if (!text) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -416,7 +416,7 @@ router.get('/shopee-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -437,7 +437,7 @@ router.get('/samehadaku-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -458,7 +458,7 @@ router.get('/mangatoon-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -479,7 +479,7 @@ router.get('/youwatch-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -500,7 +500,7 @@ router.get('/doramaindo-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -521,7 +521,7 @@ router.get('/drakor-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -542,7 +542,7 @@ router.get('/konachan-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -563,7 +563,7 @@ router.get('/growstock-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -598,7 +598,7 @@ router.get('/moddroid-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -633,7 +633,7 @@ router.get('/thelazy-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -668,7 +668,7 @@ router.get('/codepos-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -689,7 +689,7 @@ router.get('/video-dl', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -710,7 +710,7 @@ router.get('/zodiak', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -731,7 +731,7 @@ router.get('/dewabatch-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -752,7 +752,7 @@ router.get('/kiryuu-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -773,7 +773,7 @@ router.get('/arti-kata', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -794,7 +794,7 @@ router.get('/kata-bijak', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -815,7 +815,7 @@ router.get('/nomor-hoki', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -836,7 +836,7 @@ router.get('/arti-mimpi', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -871,7 +871,7 @@ router.get('/sfile-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1064,7 +1064,7 @@ router.get('/ytshort-dl', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1085,7 +1085,7 @@ router.get('/heroml', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1107,7 +1107,7 @@ router.get('/manga-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1142,7 +1142,7 @@ router.get('/tools/subnet-lookup', async(req, res) => {
     }
     if (!ip) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1163,7 +1163,7 @@ router.get('/tools/cloudflare-resolver', async(req, res) => {
     }
     if (!domain) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1184,7 +1184,7 @@ router.get('/tools/md5-encrypt', async(req, res) => {
     }
     if (!teks) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1205,7 +1205,7 @@ router.get('/tools/subdomain', async(req, res) => {
     }
     if (!ip) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1282,7 +1282,7 @@ router.get('/mediafire-dl', async(req, res) => {
     }
     if (!url || !url.includes('mediafire.com')) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter url / url tidak valid!'
         })
     } else {
@@ -1304,7 +1304,7 @@ router.get('/tools/openport-checker', async(req, res) => {
     }
     if (!domain || !port) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1339,7 +1339,7 @@ router.get('/ig-dl', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1359,7 +1359,7 @@ router.get('/igstalk', async(req, res) => {
     }
     if (!username) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1379,7 +1379,7 @@ router.get('/igstory', async(req, res) => {
     }
     if (!username) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1399,7 +1399,7 @@ router.get('/search-grup', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1669,7 +1669,9 @@ router.get('/loli', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
         loli().then(data => {
-            res.send(data)
+        data = await fetch(data.link)
+        var buffer = await data.buffer()
+            res.end(buffer)
         })
     }
 })
@@ -1756,7 +1758,7 @@ router.get('/twitter-stalk', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1777,7 +1779,7 @@ router.get('/ytmp3', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1797,7 +1799,7 @@ router.get('/ytmp4', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1819,7 +1821,7 @@ router.get('/ytaudio', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1839,7 +1841,7 @@ router.get('/ytvideo', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1860,7 +1862,7 @@ router.get('/search-sticker', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1881,7 +1883,7 @@ router.get('/playstore', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1902,7 +1904,7 @@ router.get('/google-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1923,7 +1925,7 @@ router.get('/yt-search', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1943,7 +1945,7 @@ router.get('/tiktok', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -1963,7 +1965,7 @@ router.get('/play', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2039,7 +2041,7 @@ router.get('/tools/whois', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2060,7 +2062,7 @@ router.get('/malanime', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2123,7 +2125,7 @@ router.get('/mangasearch', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2172,7 +2174,7 @@ router.get('/sline-dl', async(req, res) => {
     }
     if (!url) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2193,7 +2195,7 @@ router.get('/qrcode', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2214,7 +2216,7 @@ router.get('/pinterest', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2235,7 +2237,7 @@ router.get('/artinama', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2256,7 +2258,7 @@ router.get('/google-image', async(req, res) => {
     }
     if (!q) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2287,19 +2289,19 @@ router.get('/createapikey', async(req, res) => {
     const keytoaccess = req.query.key
     if (!createapikey) {
         res.send({
-            code: 403,
+            status: 403,
             message: 'What?'
         })
     }
     if (keytoaccess !== '06112002') {
         res.send({
-            code: 403,
+            status: 403,
             message: 'What?'
         })
     } else {
         premium.addPremiumUser(createapikey, waktuapikey)
         res.send({
-            code: 200,
+            status: 200,
             message: `success create apikey ${createapikey}`
         })
     }
@@ -2309,7 +2311,7 @@ router.get('/checkapikey', async(req, res) => {
     const apikeynyaaa = req.query.apikey
     if (!apikeynyaaa) {
         res.send({
-            code: 403,
+            status: 403,
             message: 'Input your apikey'
         })
     } else {
@@ -2317,7 +2319,7 @@ router.get('/checkapikey', async(req, res) => {
             const expired = (await premium.getPremiumExpired(apikeynyaaa)).expired
             const cekvip = ms(expired - Date.now())
             res.send({
-                code: 200,
+                status: 200,
                 message: `Apikey Expire at: ${cekvip}`
             })
         } catch {
@@ -2332,19 +2334,19 @@ router.get('/delapikey', async(req, res) => {
     const keytoaccesss = req.query.key
     if (!delapikey) {
         res.send({
-            code: 403,
+            status: 403,
             message: 'What?'
         })
     }
     if (keytoaccesss !== '06112002') {
         res.send({
-            code: 403,
+            status: 403,
             message: 'What?'
         })
     } else {
         premium.deleteApikey(delapikey)
         res.send({
-            code: 200,
+            status: 200,
             message: `success delete apikey ${delapikey}`
         })
     }
@@ -2354,7 +2356,7 @@ router.get('/listapikey', async(req, res) => {
     const keytoacces = req.query.key
     if (keytoacces !== '06112002') {
         res.send({
-            code: 403,
+            status: 403,
             message: 'What?'
         })
     } else {
@@ -2379,7 +2381,7 @@ router.get('/tools/base64', async(req, res) => {
 
     if (!encode && !decode) {
         res.status(400).send({
-            code: 400,
+            status: 400,
             message: 'Failed, pliese input parameter.'
         })
     } else if (encode) {
@@ -2412,7 +2414,7 @@ router.get('/tools/ipgeolocation', async(req, res) => {
     }
     if (!ip) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter ip'
         })
     } else {
@@ -2532,7 +2534,7 @@ router.get('/textpro/:id', async(req, res) => {
     }
     if (!text) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
@@ -2611,12 +2613,12 @@ router.get('/textpro2/:id', async(req, res) => {
     }
     if (!text1) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else if (!text2) {
         res.status(500).send({
-            code: 500,
+            status: 500,
             message: 'masukan parameter'
         })
     } else {
