@@ -1418,7 +1418,7 @@ router.get('/game/family100', async(req, res) => {
         let { question, answer } = anu.data.result
         res.send({
             status: 200,
-            creator: 'Ramlan ID'
+            creator: 'Ramlan ID',
             soal: question,
             jawaban: answer
         })
