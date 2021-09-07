@@ -1668,7 +1668,7 @@ router.get('/loli', async(req, res) => {
         __dirname = process.cwd();
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
-        loli().then(data => {
+        loli().then(async(data) => {
         data = await fetch(data.link)
         var buffer = await data.buffer()
             res.end(buffer)
