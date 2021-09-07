@@ -93,6 +93,10 @@ const {
     textpro
 } = require('./../lib');
 
+const {
+    yta,
+    ytv
+} = require('./../lib/utils');
 const { default: axios } = require('axios');
 const _dbapikey = JSON.parse(fs.readFileSync('./database/premium.json'));
 premium.expiredCheck(_dbapikey);
@@ -1410,15 +1414,13 @@ router.get('/game/family100', async(req, res) => {
         __dirname = process.cwd();
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
-        var xzyppp = fs.readFileSync('./database/family100.json')
-        var ditiin = JSON.parse(xzyppp)
-        var rwscwx = Math.floor(Math.random() * ditiin.length)
-        var rin421 = ditiin[rwscwx]
-        var jawaban = rin421.jawaban.toLowerCase()
+        anu = await axios.get('https://api.lolhuman.xyz/api/tebak/family100?apikey=YTRAMLANID')
+        let { question, answer } = anu.data.result
         res.send({
             status: 200,
-            soal: rin421.soal,
-            jawaban: jawaban
+            creator: 'Ramlan ID'
+            soal: question,
+            jawaban: answer
         })
     }
 })
@@ -1739,6 +1741,70 @@ router.get('/ytmp3', async(req, res) => {
         })
     }
 })
+router.get('/ytmp4', async(req, res) => {
+    var url = req.query.url
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!url) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        ytmp4(url).then(data => {
+            data.dl_link = req.protocol + '://' + req.headers.host + '/ytmate?url=' + data.dl_link
+            res.send(data)
+        })
+    }
+})
+
+router.get('/ytaudio', async(req, res) => {
+    var url = req.query.url
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!url) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        yta(url).then(data => {
+        data.link = req.protocol + '://' + req.headers.host + '/ytmate?url=' + data.link
+            res.send(data)
+        })
+    }
+})
+router.get('/ytvideo', async(req, res) => {
+    var url = req.query.url
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!url) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        ytv(url).then(data => {
+            data.link = req.protocol + '://' + req.headers.host + '/ytmate?url=' + data.link
+            res.send(data)
+        })
+    }
+})
 
 router.get('/search-sticker', async(req, res) => {
     var q = req.query.q
@@ -1863,30 +1929,6 @@ router.get('/play', async(req, res) => {
         })
     }
 })
-
-router.get('/ytmp4', async(req, res) => {
-    var url = req.query.url
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!url) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        ytmp4(url).then(data => {
-            data.dl_link = req.protocol + '://' + req.headers.host + '/ytmate?url=' + data.dl_link
-            res.send(data)
-        })
-    }
-})
-
-
 router.get('/random/asupan', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
