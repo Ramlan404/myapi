@@ -97,6 +97,12 @@ const {
     yta,
     ytv
 } = require('./../lib/utils/ytdl');
+const {
+    getUser,
+    getPost,
+    searchUser,
+    igstory
+} = require('./../lib/utils/instagram');
 const { default: axios } = require('axios');
 const _dbapikey = JSON.parse(fs.readFileSync('./database/premium.json'));
 premium.expiredCheck(_dbapikey);
@@ -1337,12 +1343,51 @@ router.get('/ig-dl', async(req, res) => {
             message: 'masukan parameter'
         })
     } else {
-        igdl(url).then(data => {
+        getPost(url.split('/')[4]).then(data => {
             res.send(data)
         })
     }
 })
+router.get('/igstalk', async(req, res) => {
+    var username = req.query.username
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
 
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!username) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        getUser(username).then(data => {
+            res.send(data)
+        })
+    }
+})
+router.get('/igstory', async(req, res) => {
+    var username = req.query.username
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!username) {
+        res.status(500).send({
+            code: 500,
+            message: 'masukan parameter'
+        })
+    } else {
+        igstory(username).then(data => {
+            res.send(data)
+        })
+    }
+})
 router.get('/search-grup', async(req, res) => {
     var q = req.query.q
     var apikey = req.query.apikey
@@ -1779,7 +1824,6 @@ router.get('/ytaudio', async(req, res) => {
         })
     } else {
         yta(url).then(data => {
-        data.link = req.protocol + '://' + req.headers.host + '/ytmate?url=' + data.link
             res.send(data)
         })
     }
@@ -1800,7 +1844,6 @@ router.get('/ytvideo', async(req, res) => {
         })
     } else {
         ytv(url).then(data => {
-            data.link = req.protocol + '://' + req.headers.host + '/ytmate?url=' + data.link
             res.send(data)
         })
     }
@@ -1950,7 +1993,7 @@ router.get('/random/asupan', async(req, res) => {
     }
     res.json({
         status: 200,
-        creator: 'Ramlan ID',
+        creator: '@iamramlan_',
         url: video.random()
     })
 })
@@ -2176,27 +2219,6 @@ router.get('/pinterest', async(req, res) => {
         })
     } else {
         pinterest(q).then(data => {
-            res.send(data)
-        })
-    }
-})
-
-router.get('/igstalk', async(req, res) => {
-    var username = req.query.username
-    var apikey = req.query.apikey
-    var isPremium = await premium.checkPremiumUser(apikey);
-
-    if (!isPremium) {
-        __dirname = process.cwd();
-        return res.status(403).sendFile(__dirname + '/views/403.html');
-    }
-    if (!username) {
-        res.status(500).send({
-            code: 500,
-            message: 'masukan parameter'
-        })
-    } else {
-        igstalk(username).then(data => {
             res.send(data)
         })
     }
