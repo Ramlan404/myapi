@@ -47,6 +47,7 @@ const {
     igdl,
     openPortChecker,
     mediafiredl,
+    pentol,
     neko,
     kemono,
     wallanime,
@@ -2017,6 +2018,20 @@ router.get('/random/asupan', async(req, res) => {
         creator: '@iamramlan_',
         url: video.random()
     })
+})
+
+router.get('/random/pentol', async(req, res) => {
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+        pentol().then(data => {
+            res.send(data)
+        })
+    }
 })
 
 router.get('/random/gachacewek', async(req, res) => {
