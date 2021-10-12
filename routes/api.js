@@ -1661,6 +1661,26 @@ router.get('/random/quotes', async(req, res) => {
     }
 })
 
+router.get('/random/heker-bucin', async(req, res) => {
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+        var xzyppp = fs.readFileSync('./database/heker.json')
+        var ditiin = JSON.parse(xzyppp)
+        var rwscwx = Math.floor(Math.random() * ditiin.length)
+        var rin421 = ditiin[rwscwx]
+        res.send({
+            status: 200,
+            quote: rin421.quote,
+            author: rin421.by
+        })
+    }
+})
+
 router.get('/random/couple', async(req, res) => {
     var apikey = req.query.apikey
     var isPremium = await premium.checkPremiumUser(apikey);
