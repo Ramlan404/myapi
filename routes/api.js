@@ -1480,7 +1480,7 @@ router.get('/nickpubg', async(req, res) => {
         __dirname = process.cwd();
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
-        anu = await axios.get('https://api.lolhuman.xyz/api/pubg/' + id + '?apikey=MYNAMEISRAMLAN'
+        anu = await axios.get('https://api.lolhuman.xyz/api/pubg/' + id + '?apikey=MYNAMEISRAMLAN')
         let { result } = anu.data.result
         res.send({
             status: 200,
@@ -1499,7 +1499,7 @@ router.get('/nickff', async(req, res) => {
         __dirname = process.cwd();
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
-        anu = await axios.get('https://api.lolhuman.xyz/api/freefire/' + id + '?apikey=MYNAMEISRAMLAN'
+        anu = await axios.get('https://api.lolhuman.xyz/api/freefire/' + id + '?apikey=MYNAMEISRAMLAN')
         let { result } = anu.data.result
         res.send({
             status: 200,
@@ -1519,7 +1519,7 @@ router.get('/nickml', async(req, res) => {
         __dirname = process.cwd();
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
-        anu = await axios.get('https://api.lolhuman.xyz/api/mobilelegend/' + id + '/' + server + '?apikey=MYNAMEISRAMLAN'
+        anu = await axios.get('https://api.lolhuman.xyz/api/mobilelegend/' + id + '/' + server + '?apikey=MYNAMEISRAMLAN')
         let { result } = anu.data.result
         res.send({
             status: 200,
