@@ -988,7 +988,7 @@ router.get('/nsfw/trap', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/trap?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/trap?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1003,7 +1003,7 @@ router.get('/nsfw/randomhentong', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1018,7 +1018,7 @@ router.get('/nsfw/ahegao', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/ahegao?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/ahegao?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1033,7 +1033,7 @@ router.get('/nsfw/echi', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1048,7 +1048,7 @@ router.get('/nsfw/ero', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random2/ero?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random2/ero?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1460,13 +1460,71 @@ router.get('/game/family100', async(req, res) => {
         __dirname = process.cwd();
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
-        anu = await axios.get('https://api.lolhuman.xyz/api/tebak/family100?apikey=YTRAMLANID')
+        anu = await axios.get('https://api.lolhuman.xyz/api/tebak/family100?apikey=MYNAMEISRAMLAN')
         let { question, answer } = anu.data.result
         res.send({
             status: 200,
             creator: 'Ramlan ID',
             soal: question,
             jawaban: answer
+        })
+    }
+})
+
+router.get('/nickpubg', async(req, res) => {
+    var id = req.query.id
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+        anu = await axios.get(`https://api.lolhuman.xyz/api/pubg/${id}?apikey=MYNAMEISRAMLAN`)
+        let { result } = anu.data.result
+        res.send({
+            status: 200,
+            creator: 'Ramlan ID',
+            result: result
+        })
+    }
+})
+
+router.get('/nickff', async(req, res) => {
+    var id = req.query.id
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+        anu = await axios.get(`https://api.lolhuman.xyz/api/freefire/${id}?apikey=MYNAMEISRAMLAN`)
+        let { result } = anu.data.result
+        res.send({
+            status: 200,
+            creator: 'Ramlan ID',
+            result: result
+        })
+    }
+})
+
+router.get('/nickml', async(req, res) => {
+    var id = req.query.id
+    var server = req.query.server
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    } else {
+        anu = await axios.get(`https://api.lolhuman.xyz/api/mobilelegend/${id}/${server}?apikey=MYNAMEISRAMLAN`)
+        let { result } = anu.data.result
+        res.send({
+            status: 200,
+            creator: 'Ramlan ID',
+            result: result
         })
     }
 })
@@ -1518,7 +1576,7 @@ router.get('/random/memeindo2', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.xteam.xyz/randomimage/meme2?APIKEY=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/meme/memeindo?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1766,7 +1824,7 @@ router.get('/sagiri', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random/sagiri?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/sagiri?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -1781,7 +1839,7 @@ router.get('/megumin', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/random/megumin?apikey=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/megumin?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2063,7 +2121,7 @@ router.get('/random/gachacewek', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.xteam.xyz/randomimage/cewe?APIKEY=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/cecan?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2078,7 +2136,7 @@ router.get('/random/gachacowok', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
   var acak = random()
-  let hasil = 'https://api.xteam.xyz/randomimage/cowo?APIKEY=YTRAMLANID'
+  let hasil = 'https://api.lolhuman.xyz/api/random/cogan?apikey=MYNAMEISRAMLAN'
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2746,7 +2804,7 @@ router.get('/photooxy/shadowtext', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/shadow?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/shadow?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2768,7 +2826,7 @@ router.get('/photooxy/romancetext', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/romance?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/romance?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2790,7 +2848,7 @@ router.get('/photooxy/smoketext', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/smoke?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/smoke?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2812,7 +2870,7 @@ router.get('/photooxy/burnpaper', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/burnpaper?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/burnpaper?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2834,7 +2892,7 @@ router.get('/photooxy/lovemessage', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/lovemessage?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/lovemessage?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2856,7 +2914,7 @@ router.get('/photooxy/undergrass', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/undergrass?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/undergrass?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2878,7 +2936,7 @@ router.get('/photooxy/lovetext', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/love?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/love?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2900,7 +2958,7 @@ router.get('/photooxy/coffetext', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/coffe?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/coffe?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2922,7 +2980,7 @@ router.get('/photooxy/woodheart', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/woodheart?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/woodheart?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2944,7 +3002,7 @@ router.get('/photooxy/woodboard', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/woodenboard?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/woodenboard?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2966,7 +3024,7 @@ router.get('/photooxy/wolfmetal', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/wolfmetal?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/wolfmetal?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -2988,7 +3046,7 @@ router.get('/photooxy/underwater', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/underwater?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/underwater?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3010,7 +3068,7 @@ router.get('/photooxy/falleaves', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/fallleaves?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/fallleaves?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3032,7 +3090,7 @@ router.get('/photooxy/flamingtext', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/flamming?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/flamming?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3054,7 +3112,7 @@ router.get('/photooxy/harrypotter', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/harrypotter?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/harrypotter?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3076,7 +3134,7 @@ router.get('/photooxy/carvedwood', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/carvedwood?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy1/carvedwood?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3099,7 +3157,7 @@ router.get('/photooxy/pubglogo', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.lolhuman.xyz/api/photooxy2/pubg?apikey=YTRAMLANID&text1='+ text1 +'&text2='+ text2 +''
+  let hasil = 'https://api.lolhuman.xyz/api/photooxy2/pubg?apikey=MYNAMEISRAMLAN&text1='+ text1 +'&text2='+ text2 +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3122,7 +3180,7 @@ router.get('/other/tahta', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.zeks.xyz/api/hartatahta?apikey=YTRAMLANID&text='+ q +''
+  let hasil = 'https://api.zeks.xyz/api/hartatahta?apikey=MYNAMEISRAMLAN&text='+ q +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
@@ -3145,7 +3203,7 @@ router.get('/nulis', async(req, res) => {
         })
     } else {
   var acak = random()
-  let hasil = 'https://api.zeks.xyz/api/nulis?apikey=YTRAMLANID&text='+ text +''
+  let hasil = 'https://api.zeks.xyz/api/nulis?apikey=MYNAMEISRAMLAN&text='+ text +''
   data = await fetch(hasil).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
