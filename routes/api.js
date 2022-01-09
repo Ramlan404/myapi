@@ -1481,7 +1481,7 @@ router.get('/nickpubg', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
         anu = await axios.get('https://api.lolhuman.xyz/api/pubg/' + id + '?apikey=MYNAMEISRAMLAN')
-        let { result } = anu.data.result
+        let { result } = anu.data
         res.send({
             status: 200,
             creator: 'Ramlan ID',
@@ -1500,7 +1500,7 @@ router.get('/nickff', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
         anu = await axios.get('https://api.lolhuman.xyz/api/freefire/' + id + '?apikey=MYNAMEISRAMLAN')
-        let { result } = anu.data.result
+        let { result } = anu.data
         res.send({
             status: 200,
             creator: 'Ramlan ID',
@@ -1520,7 +1520,7 @@ router.get('/nickml', async(req, res) => {
         return res.status(403).sendFile(__dirname + '/views/403.html');
     } else {
         anu = await axios.get('https://api.lolhuman.xyz/api/mobilelegend/' + id + '/' + server + '?apikey=MYNAMEISRAMLAN')
-        let { result } = anu.data.result
+        let { result } = anu.data
         res.send({
             status: 200,
             creator: 'Ramlan ID',
