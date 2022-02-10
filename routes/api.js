@@ -162,13 +162,13 @@ router.get('/ucapan', async (req, res) => {
 
     res.json({
         status: true,
-        creator: `Aqulzz`,
+        creator: `Ramlan ID`,
         message: `Jangan lupa subs YT RAMLAN ID`,
         result : tamHari(WaktuJKt)
     })
     } catch (e) {
         console.log(e)
-        res.json({ status : false, creator : `Aqulzz`, message : "kenapa error? karna lu wibu"})
+        res.json({ status : false, creator : `Ramlan ID`, message : "kenapa error? karna lu wibu"})
     }
 
 })
@@ -177,11 +177,11 @@ router.get('/hitungmundur', async (req, res) => {
         bulan = req.query.bulan
         tanggal = req.query.tanggal
 
-    if (!bulan) return res.json({ status : false, creator : `Aqulzz`, message : "masukan parameter bulan"})
-    if (!tanggal) return res.json({ status : false, creator : `Aqulzz`, message : "masukan parameter tanggal"})
+    if (!bulan) return res.json({ status : false, creator : `Ramlan ID`, message : "masukan parameter bulan"})
+    if (!tanggal) return res.json({ status : false, creator : `Ramlan ID`, message : "masukan parameter tanggal"})
 
     try {
-    var countDownDate = new Date(`${bulan} ${tanggal}, 2021 00:00:00`).getTime();
+    var countDownDate = new Date(`${bulan} ${tanggal}, 2022 00:00:00`).getTime();
         var now = new Date().getTime();
 
 		function kurangwaktu(waktunya, waktuskrg){
@@ -196,13 +196,13 @@ router.get('/hitungmundur', async (req, res) => {
 
     res.json({
         status: true,
-        creator: `Aqulzz`,
+        creator: `Ramlan ID`,
         message: `Jangan lupa subs YT RAMLAN ID`,
         result : kurangwaktu(countDownDate, now)
     })
     } catch (e) {
         console.log(e)
-        res.json({ status : false, creator : `Aqulzz`, message : "kenapa eror? karna lu wibu"})
+        res.json({ status : false, creator : `Ramlan ID`, message : "kenapa eror? karna lu wibu"})
     }
 
 })
