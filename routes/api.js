@@ -2104,13 +2104,7 @@ router.get('/tiktok', async(req, res) => {
                   }
                     
         })
-    } catch (e) {
-    res.json({
-        status: false,
-        creator: 'Ramlan ID',
-        message: 'Error bwang'
-        })
-       }
+    }
 })
 
 
