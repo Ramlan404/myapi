@@ -1379,7 +1379,7 @@ router.get('/igstalk', async(req, res) => {
                      post: result.posts,
                      followers: result.followers,
                      following: result.following,
-                     bio: result.bio,
+                     bio: result.bio
                      profile: result.photo_profile
                     }
               })
