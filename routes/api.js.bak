@@ -3242,4 +3242,54 @@ router.get('/other/tahta', async(req, res) => {
   res.sendFile(__path +'/tmp/'+acak+'.jpg')
   }
  })
+
+router.get('/nulis', async(req, res) => {
+    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  var acak = random()
+  let hasil = 'https://api.zeks.xyz/api/nulis?apikey=MYNAMEISRAMLAN&text='+ text +''
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/'+acak+'.jpg', data)
+  res.sendFile(__path +'/tmp/'+acak+'.jpg')
+  }
+ })
+router.get('/other/ttp', async(req, res) => {
+/*    var text = req.query.text
+    var apikey = req.query.apikey
+    var isPremium = await premium.checkPremiumUser(apikey);
+
+    if (!isPremium) {
+        __dirname = process.cwd();
+        return res.status(403).sendFile(__dirname + '/views/403.html');
+    }
+    if (!text) {
+        res.status(500).send({
+            status: 500,
+            message: 'masukin parameter'
+        })
+    } else {
+  var acak = random()
+await fs.writeFileSync(__path +'/tmp/'+acak+'ttp.png', text2png(text, {
+                    color: 'white',
+                    font: '200px futura',
+                    padding: 20,
+                    lineSpacing: 60,
+                    textAlign: 'center',
+                    strokeWidth: 15
+                }))
+  res.sendFile(__path +'/tmp/'+acak+'ttp.png')
+  }*/
+ })
 module.exports = router
